@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+   <section class="section1">
+    
+    <div class="container">
+        
+    {{ form_start(form) }}
+<h2>Shorten your URL</h2>
+{{ form_row(form.originalUrl) }}
+    <button type="submit">SHORTEN</button>
+    {{ form_end(form) }}
+    <div class="drops">
+    <div class="drop drop-1" id="1"></div>
+    <div class="drop drop-2" id="2"></div>
+    <div class="drop drop-3" id="3"></div>
+    <div class="drop drop-4" id="4"></div>
+    <div class="drop drop-5" id="5"></div>
+  </div>
+    </div>
+     <div class="btndwn"><p>URL Statistics </p>&#709;</div>
+</section>
+<section class="section2" >
+<div class="container malovise">
+<div class="drops">
+    <div class="drop drop-1" id="1"></div>
+    <div class="drop drop-2" id="2"></div>
+    <div class="drop drop-3" id="3"></div>
+    <div class="drop drop-4" id="4"></div>
+    <div class="drop drop-5" id="5"></div>
+    <div class="container2">
+        <h2>URL Statistics</h2>
+    
+   
+   {% for key, value in urlData %}
+<div class="flex-container">
+  <div class="flex-items ">{{key+1}}.</div>  <div class="flex-items linkz"><a class="linkURL " href="{{ app.request.getSchemeAndHttpHost()}}/{{ value.urlData.shortenedUrl }}">{{ app.request.getSchemeAndHttpHost() }}/{{ value.urlData.shortenedUrl }}</a></div> 
+ <div class="flex-items clicks">  {{value.clicks}} clicks</div> </br>
+</div>
+{% endfor %}
+
+</div>
+</div>
+
+</section>
+<div class="drops">
+    <div class="drop drop-1" id="1"></div>
+    <div class="drop drop-2" id="2"></div>
+    <div class="drop drop-3" id="3"></div>
+    <div class="drop drop-4" id="4"></div>
+    <div class="drop drop-5" id="5"></div>
+</div>
+{% endblock %}

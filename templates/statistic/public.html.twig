@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section class="section3">
+    <p class="notice">Add current link to bookmarks. Here you will be able to track <b>statistics</b> of the
+                URL.</p>
+    <div class="container">
+    <div class="url-statistics">
+        
+            
+
+            <h2 class="goDown"> Statistics for URL </h2>
+            <a class="texthere" href="{{ app.request.getSchemeAndHttpHost()}}/{{ url }}">{{ app.request.getSchemeAndHttpHost() }}/{{ url }}</a> </br>
+            <button type="button" class="copyToClipboard">Copy link</button>
+            <h3>TOTAL CLICKS</h3>
+            <p>{{ clicks }}</p>
+           
+      
+    </div>
+    <div class="drops">
+    <div class="drop drop-1" id="1"></div>
+    <div class="drop drop-2" id="2"></div>
+    <div class="drop drop-3" id="3"></div>
+    <div class="drop drop-4" id="4"></div>
+    <div class="drop drop-5" id="5"></div>
+  </div>
+    </div>
+    <section>
+{% endblock %}

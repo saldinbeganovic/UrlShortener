@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">{% endblock %}
+</head>
+<body>
+<nav class="nav">
+    <a href="{{ path('homepage') }}" class="logo">URLShortener</a>
+   
+</nav>
+<main class="scroller">
+{% block body %}{% endblock %}
+</main>
+<footer class="footer">
+    © 2022 Saldin Beganovic
+</footer>
+{% block javascripts %}
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+{% endblock %}
+</body>
+</html>
